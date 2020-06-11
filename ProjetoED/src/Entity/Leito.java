@@ -12,6 +12,7 @@ public class Leito
 	private int internacoes7d;/* Número de novas internações de pacientes confirmados ou com suspeita de COVID-19 nos últimos 7 dias */
 	private int internacoes7di;/* Número de novas internações de pacientes confirmados ou com suspeita de COVID-19 nos 7 dias anteriores */
 	private Double internacoes7v7;/* Variação no número de novas internações ((internacoes_7d - internacoes_7d_l) / internacoes_7d_l) */
+	
 	public Date getData() {
 		return data;
 	}

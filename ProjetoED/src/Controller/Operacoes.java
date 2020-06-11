@@ -56,12 +56,19 @@ public class Operacoes
 		br.close();
 	}
 
+	
+	
+		
+	
+	
+	
+	
 	public void Update() 
 	{
 		int option;
 		String lista;
 		
-		if(lista.contains("a")) {
+		if(list.contains("a")) {
 			
 
 			

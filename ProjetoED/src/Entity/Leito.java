@@ -61,4 +61,9 @@ public class Leito
 	public void setInternacoes7v7(Double internacoes7v7) {
 		this.internacoes7v7 = internacoes7v7;
 	}	
+	/* Comparando nomes de String retorna boolean */
+	public int compareTo(Leito l) 
+	{
+		return this.getNomedistrito().compareTo(l.getNomedistrito());
+	}
 }

@@ -10,7 +10,13 @@ public class Ordenacao
 {
 	public void bubblesort(List<Leito> lst)
 	{
-		ArrayList<String> al = new ArrayList<String>();
+		/* Preenchendo ArrayList Com a as informações do csv */
+		ArrayList<Leito> al = new ArrayList<Leito>();
+		for(Leito leito : lst) 
+		{
+            al.addAll(al);
+        }
 		Collections.sort(lst, Collections.reverseOrder());
+		
 	}
 }

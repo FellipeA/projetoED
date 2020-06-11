@@ -1,24 +1,15 @@
 package Main;
 
-import java.io.BufferedReader;
-import java.io.File;
-import java.io.FileReader;
 import java.io.IOException;
-import java.io.InputStreamReader;
+
+import Controller.Operacoes;
 
 public class Principal {
 	
 	public static void main(String[] args) throws IOException 
 	{
-		int cta, a = 0;
-        char c;
-        File f = new File("./resources/Leitos-e-Internacoes2.csv");
-        BufferedReader br = new BufferedReader(new FileReader(f));
-        String[] dados;
-        String linha;
-        while((linha = br.readLine()) != null) {
-            System.out.println(linha);
-        }
-        br.close();
+		Operacoes op = new Operacoes();
+		
+		op.Create();
 	}
 }

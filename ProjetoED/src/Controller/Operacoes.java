@@ -1,6 +1,7 @@
 package Controller;
 
 import java.io.BufferedReader;
+import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
@@ -10,11 +11,27 @@ import java.io.PrintWriter;
 
 public class Operacoes 
 {
-	public void Create() 
+	public void Create() throws IOException 
 	{
+		File f = new File("./resources/Leitos-e-Internacoes2.csv");
+		FileReader fr = new FileReader(f);
+		BufferedReader bfr = new BufferedReader(fr);
 		
+		File f1 = new File("./resources/entrada.txt");
+		f1.createNewFile();
+		FileWriter fw = new FileWriter(f1);
+		BufferedWriter bfw = new BufferedWriter(fw);
 		
+		String texto = "";
+		while(bfr.ready())
+		{
+			texto += bfr.readLine() + "\n";
+		}
 		
+		bfw.write(texto);
+		bfw.flush();
+		bfw.close();
+		bfr.close();
 	}
 	
 	public void Read(String caminho1) throws IOException 
@@ -32,13 +49,10 @@ public class Operacoes
 		br.close();
 	}
 	
-	
 	public void Update() 
 	{
 		
-		
 	}
-	
 	
 	public void Delete(String linhadeletada) throws IOException
 	{  
@@ -75,7 +89,8 @@ public class Operacoes
             {  
                 System.out.println("Arquivo renomeando!");  
             }  
-        }catch (FileNotFoundException arq) 
+        }
+        catch (FileNotFoundException arq) 
         {  
             arq.printStackTrace();  
         }

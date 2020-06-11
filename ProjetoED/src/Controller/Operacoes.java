@@ -14,29 +14,61 @@ import java.util.ArrayList;
 
 import javax.swing.JOptionPane;
 
+import Entity.Leito;
+
 public class Operacoes 
 {
 	private int variavel;
 
-	public void Create() throws IOException 
+	public static void Create() throws IOException 
 	{
+		/* Abridno Arquivo Original */
 		File f = new File("./resources/Leitos-e-Internacoes2.csv");
 		FileReader fr = new FileReader(f);
 		BufferedReader bfr = new BufferedReader(fr);
 		
+		/* Colocando no novo arquivo */
 		File f1 = new File("./resources/entrada.txt");
 		f1.createNewFile();
 		FileWriter fw = new FileWriter(f1);
 		BufferedWriter bfw = new BufferedWriter(fw);
 		
-		String texto = "";
+		/* Lendo o arquivo original e passando para a Lista */
+		FileReader fr2 = new FileReader(f1);
+		BufferedReader bfr2 = new BufferedReader(fr2);
+		
+		Leito l = new Leito();
+		ArrayList<Leito> lst = new ArrayList<>();
+		
+		/* Pular o cabeçalho */
+		bfr.readLine();
+		
+		/* Escreve no txt */
+		String txt = "";
 		while(bfr.ready())
 		{
-			texto += bfr.readLine() + "\n";
+			txt += bfr.readLine() + "\n";
 		}
-		
-		bfw.write(texto);
+		bfw.write(txt);
 		bfw.flush();
+		
+		/* Passando Leito para a Lista */
+		String[] texto;
+		while(bfr2.ready())
+		{
+			texto = bfr2.readLine().split(";");
+			l = new Leito();
+			l.setData(texto[0]);
+			l.setNomedistrito(texto[1]);
+			l.setTotalcovidleito(texto[2]);
+			l.setPopulacao(texto[3]);
+			l.setLeitospc(texto[4]);
+			l.setInternacoes7d(texto[5]);
+			l.setInternacoes7di(texto[6]);
+			l.setInternacoes7v7(texto[7]);
+			lst.add(l);
+		}
+		System.out.println(lst);
 		bfw.close();
 		bfr.close();
 	}
@@ -55,13 +87,6 @@ public class Operacoes
 		}
 		br.close();
 	}
-
-	
-	
-		
-	
-	
-	
 	
 	public void Update() 
 	{

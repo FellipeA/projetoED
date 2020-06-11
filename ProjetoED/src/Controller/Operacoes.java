@@ -19,7 +19,7 @@ import Entity.Leito;
 public class Operacoes 
 {
 	private int variavel;
-	ArrayList<Leito> lst = new ArrayList<>();
+	static ArrayList<Leito> lst = new ArrayList<>();
 	
 	public static void Create() throws IOException 
 	{

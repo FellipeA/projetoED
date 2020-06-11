@@ -99,10 +99,4 @@ public class Operacoes
             e.printStackTrace();  
         }  
     }
-
-
-
-
-
-
 }

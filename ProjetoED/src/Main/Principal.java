@@ -8,7 +8,8 @@ import java.io.InputStreamReader;
 
 public class Principal {
 	
-	public static void main(String[] args) throws IOException {
+	public static void main(String[] args) throws IOException 
+	{
 		int cta, a = 0;
         char c;
         File f = new File("./resources/Leitos-e-Internacoes.csv");

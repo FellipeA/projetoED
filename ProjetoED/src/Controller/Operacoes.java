@@ -19,7 +19,8 @@ import Entity.Leito;
 public class Operacoes 
 {
 	private int variavel;
-
+	ArrayList<Leito> lst = new ArrayList<>();
+	
 	public static void Create() throws IOException 
 	{
 		/* Abridno Arquivo Original */
@@ -38,7 +39,6 @@ public class Operacoes
 		BufferedReader bfr2 = new BufferedReader(fr2);
 		
 		Leito l = new Leito();
-		ArrayList<Leito> lst = new ArrayList<>();
 		
 		/* Pular o cabeçalho */
 		bfr.readLine();

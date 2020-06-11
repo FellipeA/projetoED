@@ -23,7 +23,7 @@ public class Operacoes
 	
 	public static void Create() throws IOException 
 	{
-		/* Abridno Arquivo Original */
+		/* Abrindo Arquivo Original */
 		File f = new File("./resources/Leitos-e-Internacoes2.csv");
 		FileReader fr = new FileReader(f);
 		BufferedReader bfr = new BufferedReader(fr);

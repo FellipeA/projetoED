@@ -65,7 +65,15 @@ public class Operacoes
 	
 	public void Update() 
 	{
+		int option;
+		String lista;
 		
+		if(lista.contains("a")) {
+			
+
+			
+			
+		}
 	}
 	
 	public void Delete() throws IOException{

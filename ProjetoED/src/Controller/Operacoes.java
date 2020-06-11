@@ -68,9 +68,9 @@ public class Operacoes
 			l.setInternacoes7v7(texto[7]);
 			lst.add(l);
 		}
-		System.out.println(lst);
 		bfw.close();
 		bfr.close();
+		bfr2.close();
 	}
 	
 	public void Read() throws IOException {

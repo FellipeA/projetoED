@@ -1,5 +1,6 @@
 package Controller;
 
-public class teste {
+public class teste 
+{
 
 }

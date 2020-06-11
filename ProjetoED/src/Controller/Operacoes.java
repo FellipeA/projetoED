@@ -56,13 +56,6 @@ public class Operacoes
 		br.close();
 	}
 
-	
-	
-		
-	
-	
-	
-	
 	public void Update() 
 	{
 		int option;

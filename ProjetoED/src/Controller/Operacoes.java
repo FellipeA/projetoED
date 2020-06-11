@@ -70,7 +70,7 @@ public class Operacoes
 		
 		if(list.contains("a")) {
 			
-
+			int a;
 			
 			
 		}

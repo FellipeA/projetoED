@@ -60,7 +60,5 @@ public class Leito
 	}
 	public void setInternacoes7v7(Double internacoes7v7) {
 		this.internacoes7v7 = internacoes7v7;
-	}
-	
-	
+	}	
 }

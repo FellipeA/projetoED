@@ -12,7 +12,7 @@ public class Principal {
 	{
 		int cta, a = 0;
         char c;
-        File f = new File("./resources/Leitos-e-Internacoes.csv");
+        File f = new File("./resources/Leitos-e-Internacoes2.csv");
         BufferedReader br = new BufferedReader(new FileReader(f));
         String[] dados;
         String linha;

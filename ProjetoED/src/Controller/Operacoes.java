@@ -34,27 +34,34 @@ public class Operacoes
 		bfr.close();
 	}
 	
-	public void Read(String caminho1) throws IOException 
-	{
-		BufferedReader br = new BufferedReader(new FileReader(caminho1));
+	public void Read() throws IOException {
+		
+		String caminho = "./resources/entrada.txt";
+		BufferedReader br = new BufferedReader(new FileReader(caminho));
 		String linha = "";
-		while(true) {
+		while (true) {
 			if(linha != null) {
 				System.out.println(linha);
-			}
-			else 
+			} else
 				break;
-			linha = br.readLine();
+				linha = br.readLine();
 		}
 		br.close();
 	}
+
+	
+	
+		
+	
+	
+	
 	
 	public void Update() 
 	{
 		
 	}
 	
-	public void Delete(String linhadeletada) throws IOException
+	public void Delete() throws IOException
 	{  
 
         System.out.println("linha a ser deletada:"+linhadeletada);  

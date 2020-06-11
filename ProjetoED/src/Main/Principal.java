@@ -11,5 +11,6 @@ public class Principal {
 		Operacoes op = new Operacoes();
 		
 		op.Create();
+		op.Read();
 	}
 }

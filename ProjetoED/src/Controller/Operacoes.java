@@ -4,13 +4,20 @@ import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.io.OutputStreamWriter;
 import java.io.PrintWriter;
+import java.util.ArrayList;
+
+import javax.swing.JOptionPane;
 
 public class Operacoes 
 {
+	private int variavel;
+
 	public void Create() throws IOException 
 	{
 		File f = new File("./resources/Leitos-e-Internacoes2.csv");
@@ -61,49 +68,32 @@ public class Operacoes
 		
 	}
 	
-	public void Delete() throws IOException
-	{  
-
-        System.out.println("linha a ser deletada:"+linhadeletada);  
-        try
-        {  
-            File inFile = new File(linhadeletada);  
-            if(!inFile.isFile())
-            {  
-                System.out.println("O caminho passado não existe!");  
-                return;  
-            }  
-            File tempFile = new File(inFile.getAbsolutePath()+".temp");  
-            BufferedReader br = new BufferedReader(new FileReader(linhadeletada));  
-            PrintWriter pw = new PrintWriter(new FileWriter(tempFile));  
-            String line = null;  
-            while((line = br.readLine()) != null)
-            {  
-                if(!line.trim().equals(linhadeletada))
-                {  
-                    pw.println(line);  
-                    pw.flush();  
-                }  
-            }  
-            pw.close();  
-            pw.flush();  
-            if(!inFile.delete())
-            {  
-                System.out.println("Arquivo não deletado!");  
-                return;  
-            }  
-            if(!tempFile.renameTo(inFile))
-            {  
-                System.out.println("Arquivo renomeando!");  
-            }  
-        }
-        catch (FileNotFoundException arq) 
-        {  
-            arq.printStackTrace();  
-        }
-        catch (IOException e) 
-        {  
-            e.printStackTrace();  
-        }  
-    }
+	public void Delete() throws IOException{
+			int tamanho;
+			String caminho = "./resources/entrada.txt";
+			int posicao = 0;
+			if(!(posicao >= 0 && posicao < tamanho)) {
+				throw new IllegalArgumentException("Posicão Invalida");
+				
+			}
+			for (int i = posicao; i< this.tamanho -1 ; i++) {
+				this.elemnto[i] = this.elementos[i+1];
+			}
+			this.tamanho--;
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 }
+
+

@@ -482,3 +482,6 @@ datahora;nome_drs;total_covid_uti;pop;leitos_pc;internacoes_7d;internacoes_7d_l;
 07/06/2020;DRS 16 - Sorocaba;165;2435936;6,8;269;268;0,4
 07/06/2020;DRS 17 - Taubaté;301;2461782;12,2;414;294;40,8
 07/06/2020;Estado de São Paulo;7610;44264016;17,2;12811;11835;8,3
+
+dale
+

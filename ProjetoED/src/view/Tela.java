@@ -23,6 +23,7 @@ import java.awt.Font;
 import javax.swing.SwingConstants;
 
 public class Tela {
+	Operacoes opt = new Operacoes();
 
 	private JFrame frmCoview;
 
@@ -73,6 +74,14 @@ public class Tela {
 		JButton btnDeletaDado = new JButton("Deletar Dado");
 		btnDeletaDado.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				try {
+					opt.Delete();
+					JOptionPane.showMessageDialog(null, "Efetuado com Sucesso");
+				} catch (IOException e1) {
+					JOptionPane.showMessageDialog(null, "Falho menor");
+					e1.printStackTrace();
+				}
+				
 			}
 		});
 		btnDeletaDado.setBounds(52, 206, 150, 23);

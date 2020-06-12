@@ -6,13 +6,19 @@ import javax.swing.JFrame;
 import com.jgoodies.forms.layout.FormLayout;
 import com.jgoodies.forms.layout.ColumnSpec;
 import com.jgoodies.forms.layout.RowSpec;
+
+import Controller.Operacoes;
+
 import com.jgoodies.forms.layout.FormSpecs;
 
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
+import java.io.IOException;
 import java.awt.event.ActionEvent;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
+
 import java.awt.Font;
 import javax.swing.SwingConstants;
 
@@ -32,8 +38,25 @@ public class Tela {
 		frmCoview.getContentPane().setLayout(null);
 		
 		JButton btnCriarNovoArquivo = new JButton("Criar Novo Arquivo");
+		
 		btnCriarNovoArquivo.setBounds(52, 67, 150, 23);
 		frmCoview.getContentPane().add(btnCriarNovoArquivo);
+		btnCriarNovoArquivo.addActionListener(new ActionListener() 
+		{
+			public void actionPerformed(ActionEvent e) 
+			{
+				Operacoes op = new Operacoes();
+				try 
+				{
+					op.Create();
+					JOptionPane.showMessageDialog(null, "Arquivo criado com sucesso !");
+				} 
+				catch (IOException e1) 
+				{
+					JOptionPane.showMessageDialog(null, "Não foi possível abrir o arquivo", "Erro !", JOptionPane.ERROR_MESSAGE);
+				}
+			}
+		});
 		
 		JButton btnLerArquivo = new JButton("Ler Arquivo");
 		btnLerArquivo.addActionListener(new ActionListener() {

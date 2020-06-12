@@ -82,7 +82,8 @@ public class Operacoes
 			if(linha != null)
 			{
 				System.out.println(linha);
-			} else
+			} 
+			else
 				break;
 				linha = br.readLine();
 		}

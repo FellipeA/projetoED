@@ -119,7 +119,7 @@ public class Operacoes
 				
 				case 2://SEGUNDA OPÇÃO DEIXANDO O USUARIO ESCOLHER SE QUER INSERIR UM NOVO ELEMENTO;
 					JOptionPane.showMessageDialog(null, "Insert ?");
-					op.Insert();
+					Operacoes.Insert();
 				break;
 				
 				case 9://CASE PARA SAIR DO NOSSO LOOPING E DO CASE
@@ -137,7 +137,18 @@ public class Operacoes
 	}
 	
 	//METODO PARA INSERIR UM NOVO ELEMENTO NO ARQUIVO TXT;
-	public void Insert() {
+	public void Insert(Leito l) throws NumberFormatException, IOException {
+		ArrayList<Leito> lista = new ArrayList<Leito>();
+        lista.addAll(Operacoes.getListaLeitos("entrada"));
+        
+
+        
+        lista.add(l);
+		criarArquivo(lista, "entrada");
+		System.out.println("Feito =D");
+        
+        
+		
 		
 	}
 
@@ -146,25 +157,17 @@ public class Operacoes
 	//METODO PARA DELETAR UM ELEMENTO DO ARQUIVO TXT;
 	//a
 	public static void Delete() throws IOException{
-		ArrayList<Leito> getListaLeitos = new ArrayList<Leito>();
+		ArrayList<Leito> lista = new ArrayList<Leito>();
+        lista.addAll(Operacoes.getListaLeitos("entrada"));
+
 		
 		// REMOVENDO O PRIMEIRO ELEMENTO DA LISTA //
-		getListaLeitos.remove(1);
-		
-		// PASSANDO A LISTA PARA STRING PARA CONSEGUIR ESCREVER EM TXT NOVAMENTE //
-		File file = new File (getListaLeitos.toString());
-		
-		// LINHA DE CODIGO PARA CONSEGUIR ESCREVER A LISTA EM UM TXT DENOVO //
-		FileWriter fw = new FileWriter(file.getAbsoluteFile());
-		BufferedWriter bw = new BufferedWriter(fw);
+        lista.remove(0);
 		
 		// ESCREVE A LISTA EM TXT NOVAMENTE ;
-		bw.write(getListaLeitos.toString());
-		bw.close();
+		criarArquivo(lista, "entrada");
 		System.out.println("Feito =D");
-		}
-		
-				
+	}			
 }
 
 

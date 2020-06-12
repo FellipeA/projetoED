@@ -11,7 +11,6 @@ public class Ordenacao
 	public void bubblesort(List<Leito> lst)
 	{
 		
-		
 	}
 	
 	public int[] shellSort(int[] vet, int size) 

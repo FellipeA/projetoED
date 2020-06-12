@@ -88,4 +88,15 @@ public class Leito
 	{
 		return nomedistrito;
 	}
+	
+	public String linhaCompleta() {
+		return this.getData()+";"+
+			   this.getNomedistrito()+";"+
+			   this.totalcovidleito+";"+
+			   this.populacao+";"+
+			   this.getLeitospc()+";"+
+			   this.internacoes7d+";"+
+			   this.internacoes7di+";"+
+			   this.internacoes7v7;
+	}
 }

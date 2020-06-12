@@ -3,13 +3,9 @@ package Controller;
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
-import java.io.OutputStreamWriter;
-import java.io.PrintWriter;
 import java.util.ArrayList;
 
 import javax.swing.JOptionPane;
@@ -18,45 +14,63 @@ import Entity.Leito;
 
 public class Operacoes 
 {
-	private int variavel;
-	static ArrayList<Leito> lst = new ArrayList<>();
+
+	private static File arquivoOriginal = new File("./resources/Leitos-e-Internacoes2.csv");
 	
-	public static void Create() throws IOException 
-	{
-		/* Abrindo Arquivo Original */
-		File f = new File("./resources/Leitos-e-Internacoes2.csv");
-		FileReader fr = new FileReader(f);
-		BufferedReader bfr = new BufferedReader(fr);
+	public static void criarArquivo(String arquivoOrigem, String nomeArquivo) throws IOException {
+//		LER ARQUIVO
+		File arquivoLido = new File("./resources/"+arquivoOrigem);
+		FileReader fr = new FileReader(arquivoLido);
+		BufferedReader br = new BufferedReader(fr);
 		
-		/* Colocando no novo arquivo */
-		File f1 = new File("./resources/entrada.txt");
+//		ARQUIVO A SER CRIADO
+		File arquivoCriado = new File("./resources/"+nomeArquivo+".txt");
+		FileWriter fw = new FileWriter(arquivoCriado);
+		BufferedWriter bw = new BufferedWriter(fw);
+		
+		String txt="";
+        while(br.ready()) {
+            txt += br.readLine() + "\n";
+        }
+        
+        bw.write(txt);
+        bw.flush();
+        
+        fr.close();
+        br.close();
+        fw.close();
+        bw.close();
+	}
+	
+	public void criarArquivo(ArrayList<Leito> lista, String nomeArquivo) throws IOException {
+		File f1 = new File("./resources/"+nomeArquivo+".txt");
 		f1.createNewFile();
 		FileWriter fw = new FileWriter(f1);
-		BufferedWriter bfw = new BufferedWriter(fw);
+		BufferedWriter bw = new BufferedWriter(fw);
 		
-		/* Lendo o arquivo original e passando para a Lista */
-		FileReader fr2 = new FileReader(f1);
-		BufferedReader bfr2 = new BufferedReader(fr2);
-		
-		Leito l = new Leito();
-		
-		/* Pular o cabeçalho */
-		bfr.readLine();
-		
-		/* Escreve no txt */
-		String txt = "";
-		while(bfr.ready())
-		{
-			txt += bfr.readLine() + "\n";
+		for(Leito l : lista) {
+			bw.write(l.linhaCompleta());
 		}
-		bfw.write(txt);
-		bfw.flush();
 		
-		/* Passando Leito para a Lista */
+		fw.close();
+		bw.close();
+		
+		JOptionPane.showMessageDialog(null, "Arquivo escrito com sucesso!");
+	}
+	
+	public ArrayList<Leito> getListaLeitos(String nomeArquivo) throws NumberFormatException, IOException {
+		File file = new File("./resources/"+nomeArquivo+".txt");
+		FileReader fileReader = new FileReader(file);
+		BufferedReader bufferedReader = new BufferedReader(fileReader);
+		
+		ArrayList<Leito> lista = new ArrayList<Leito>();
+		Leito l;
 		String[] texto;
-		while(bfr2.ready())
+		
+		bufferedReader.readLine();
+		while(bufferedReader.ready())
 		{
-			texto = bfr2.readLine().split(";");
+			texto = bufferedReader.readLine().split(";");
 			l = new Leito();
 			l.setData(texto[0]);
 			l.setNomedistrito(texto[1]);
@@ -66,15 +80,18 @@ public class Operacoes
 			l.setInternacoes7d(Integer.parseInt(texto[5]));
 			l.setInternacoes7di(Integer.parseInt(texto[6]));
 			l.setInternacoes7v7(Double.parseDouble(texto[7].replace(",", ".")));
-			lst.add(l);
+			lista.add(l);
 		}
-		bfw.close();
-		bfr.close();
-		bfr2.close();
+		bufferedReader.close();
+		fileReader.close();
+		return lista;
 	}
 	
-	public void Read() throws IOException
-	{	
+	public void Create() throws IOException {
+		criarArquivo(arquivoOriginal.getName(), "entrada");
+	}
+	
+	public void Read() throws IOException {	
 		String caminho = "./resources/entrada.txt";
 		BufferedReader br = new BufferedReader(new FileReader(caminho));
 		String linha = "";
@@ -94,18 +111,18 @@ public class Operacoes
 		int option;
 		String lista;
 		
-		if(list.contains("a")) {
-			
-			int a;
-			
-			
-		}
+//		if(list.contains("a")) {
+//			
+//			int a;
+//			
+//			
+//		}
 	}
 	
-	public void Delete() throws IOException
-	{
-		lst.remove(1);
-		System.out.println(lst);
-	}	
+//	public void Delete() throws IOException
+//	{
+//		lst.remove(1);
+//		System.out.println(lst);
+//	}	
 }
 

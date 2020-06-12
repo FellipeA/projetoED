@@ -18,8 +18,7 @@ import Controller.Ordenacao;
 
 public class Tela 
 {
-	Operacoes opt = new Operacoes();
-
+	private Operacoes opt = new Operacoes();
 	private JFrame frmCoview;
 
 	public Tela() 
@@ -76,16 +75,8 @@ public class Tela
 		{
 			public void actionPerformed(ActionEvent e) 
 			{
-				try
-				{
-					opt.Delete();
-					JOptionPane.showMessageDialog(null, "Efetuado com Sucesso");
-				} 
-				catch (IOException e1) 
-				{
-					JOptionPane.showMessageDialog(null, "Falho menor");
-					e1.printStackTrace();
-				}
+				//opt.Delete();
+				JOptionPane.showMessageDialog(null, "Efetuado com Sucesso");
 			}
 		});
 		btnDeletaDado.setBounds(52, 206, 150, 23);

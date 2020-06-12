@@ -129,27 +129,17 @@ public class Operacoes
 				default:
 					JOptionPane.showMessageDialog(null, "ESCOLHA APENAS UMA OPÇÃO: ");
 				break;
+			}
 		}
-		
-		}
-		
-		
 	}
 	
 	//METODO PARA INSERIR UM NOVO ELEMENTO NO ARQUIVO TXT;
 	public void Insert(Leito l) throws NumberFormatException, IOException {
 		ArrayList<Leito> lista = new ArrayList<Leito>();
-        lista.addAll(Operacoes.getListaLeitos("entrada"));
-        
-
-        
+        lista.addAll(Operacoes.getListaLeitos("entrada"));        
         lista.add(l);
 		criarArquivo(lista, "entrada");
-		System.out.println("Feito =D");
-        
-        
-		
-		
+		System.out.println("Feito =D");	
 	}
 
 	
@@ -159,11 +149,8 @@ public class Operacoes
 	public static void Delete() throws IOException{
 		ArrayList<Leito> lista = new ArrayList<Leito>();
         lista.addAll(Operacoes.getListaLeitos("entrada"));
-
-		
 		// REMOVENDO O PRIMEIRO ELEMENTO DA LISTA //
-        lista.remove(0);
-		
+        lista.remove(0);		
 		// ESCREVE A LISTA EM TXT NOVAMENTE ;
 		criarArquivo(lista, "entrada");
 		System.out.println("Feito =D");

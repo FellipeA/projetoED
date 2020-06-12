@@ -62,10 +62,10 @@ public class Operacoes
 			l.setNomedistrito(texto[1]);
 			l.setTotalcovidleito(Integer.parseInt(texto[2]));
 			l.setPopulacao(Integer.parseInt(texto[3]));
-			l.setLeitospc(Double.parseDouble(texto[4]));
+			l.setLeitospc(Double.parseDouble(texto[4].replace(",", ".")));
 			l.setInternacoes7d(Integer.parseInt(texto[5]));
 			l.setInternacoes7di(Integer.parseInt(texto[6]));
-			l.setInternacoes7v7(Double.parseDouble(texto[7]));
+			l.setInternacoes7v7(Double.parseDouble(texto[7].replace(",", ".")));
 			lst.add(l);
 		}
 		bfw.close();
@@ -102,31 +102,10 @@ public class Operacoes
 	}
 	
 	public void Delete() throws IOException{
-			int tamanho;
-			String caminho = "./resources/entrada.txt";
-			int posicao = 0;
-			if(!(posicao >= 0 && posicao < tamanho)) {
-				throw new IllegalArgumentException("Posicão Invalida");
-				
-			}
-			for (int i = posicao; i< this.tamanho -1 ; i++) {
-				this.elemnto[i] = this.elementos[i+1];
-			}
-			this.tamanho--;
+		lst.remove(1);
+		System.out.println(lst);
 	}
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
+		
+		
 }
-
 

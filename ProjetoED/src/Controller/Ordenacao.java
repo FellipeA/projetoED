@@ -32,10 +32,7 @@ public class Ordenacao
 	            }
 	            vet [j + gap] = value;
 	        }
-	    }
-	    
-	    File f = new File("./");
-	    
+	    }   
 	    return vet;
 	}
 }

@@ -1,11 +1,9 @@
 package Controller;
 
-import java.io.BufferedWriter;
-import java.io.File;
-import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.List;
+
+import javax.swing.JOptionPane;
 
 import Entity.Leito;
 
@@ -15,9 +13,25 @@ public class Ordenacao {
 	
 	public void bubblesort(ArrayList<Leito> lst) {
 		
+		Leito aux;
+		for (int i = 1; i <= lst.size(); i++) {
+			for (int j = i+1; i <= lst.size(); i++) {
+				if (lst.get(i).getTotalcovidleito() > lst.get(j).getTotalcovidleito()) {
+					aux = lst.get(i);
+					lst.set(i, lst.get(j));
+					lst.set(j, aux);
+				}
+			}
+		}
+		
+		try {
+			op.criarArquivo(lst, "bubblesort");
+		} catch (IOException e) {
+			JOptionPane.showMessageDialog(null, "ERRO AO CRIAR O ARQUIVO BUBBLESORT", "ERRO!", JOptionPane.ERROR_MESSAGE);
+		}
 	}
 	
-	public void shellSort(ArrayList<Leito> lst, int size) throws IOException {
+	public void shellSort(ArrayList<Leito> lst, int size) {
 	    int i , j;
 		Leito value;
 	    int gap = 1;
@@ -41,7 +55,11 @@ public class Ordenacao {
 	        }
 	    }   
 	    
-	    op.criarArquivo(lst, "shellsort");
+	    try {
+			op.criarArquivo(lst, "shellsort");
+		} catch (IOException e) {
+			JOptionPane.showMessageDialog(null, "ERRO AO CRIAR O ARQUIVO SHELLSORT", "ERRO!", JOptionPane.ERROR_MESSAGE);
+		}
 	    
 	}
 }

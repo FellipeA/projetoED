@@ -79,7 +79,8 @@ public class Operacoes
 		BufferedReader br = new BufferedReader(new FileReader(caminho));
 		String linha = "";
 		while (true) {
-			if(linha != null) {
+			if(linha != null)
+			{
 				System.out.println(linha);
 			} else
 				break;

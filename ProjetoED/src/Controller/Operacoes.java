@@ -60,12 +60,12 @@ public class Operacoes
 			l = new Leito();
 			l.setData(texto[0]);
 			l.setNomedistrito(texto[1]);
-			l.setTotalcovidleito(texto[2]);
-			l.setPopulacao(texto[3]);
-			l.setLeitospc(texto[4]);
-			l.setInternacoes7d(texto[5]);
-			l.setInternacoes7di(texto[6]);
-			l.setInternacoes7v7(texto[7]);
+			l.setTotalcovidleito(Integer.parseInt(texto[2]));
+			l.setPopulacao(Integer.parseInt(texto[3]));
+			l.setLeitospc(Double.parseDouble(texto[4]));
+			l.setInternacoes7d(Integer.parseInt(texto[5]));
+			l.setInternacoes7di(Integer.parseInt(texto[6]));
+			l.setInternacoes7v7(Double.parseDouble(texto[7]));
 			lst.add(l);
 		}
 		bfw.close();

@@ -1,7 +1,5 @@
 package view;
 
-import java.awt.BorderLayout;
-import java.awt.EventQueue;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -9,14 +7,21 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
+import Controller.Operacoes;
 import Entity.Leito;
 
+import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JTextField;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 
 public class TelaInserir extends JFrame 
 {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private JPanel contentPane;
 	private JTextField txtData;
 	private JTextField txtDistrito;
@@ -30,7 +35,7 @@ public class TelaInserir extends JFrame
 
 	public TelaInserir() {
 		setTitle("Inserir Leito");
-		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE);
 		setBounds(100, 100, 450, 300);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
@@ -41,8 +46,8 @@ public class TelaInserir extends JFrame
 		btnInserir.addActionListener(new ActionListener() {
 			
 			public void actionPerformed(ActionEvent e) {
-				Leito leito = new Leito();
 				
+				Leito leito = new Leito();
 				leito.setData(txtData.getText());
 				leito.setInternacoes7d(Integer.parseInt(txtInternacoes7.getText()));
 				leito.setInternacoes7di(Integer.parseInt(txtInternacoes7di.getText()));
@@ -50,7 +55,10 @@ public class TelaInserir extends JFrame
 				leito.setNomedistrito(txtDistrito.getText());
 				leito.setPopulacao(Integer.parseInt((txtPopulacao.getText())));
 				leito.setTotalcovidleito(Integer.parseInt(txtLeitos.getText()));
+				leito.setInternacoes7v7(Double.parseDouble(txtInternacoes7v7.getText()));
 				
+				Operacoes.Insert(leito);
+				JOptionPane.showMessageDialog(null, "Leito Inserido com Sucesso!");
 			}
 		});
 		btnInserir.setBounds(169, 201, 89, 23);
@@ -134,18 +142,18 @@ public class TelaInserir extends JFrame
 			
 			public void actionPerformed(ActionEvent e) {
 				
-			txtInternacoes7v7.setText((((Integer.parseInt(txtInternacoes7.getText())) - (Integer.parseInt(txtInternacoes7di.getText())) / (Integer.parseInt(txtInternacoes7di.getText())))));
-				
+			txtInternacoes7v7.setText(String.valueOf(
+					Integer.parseInt(txtInternacoes7.getText()) - 
+					Integer.parseInt(txtInternacoes7di.getText()) /
+					Integer.parseInt(txtInternacoes7di.getText())));
+			
 			}
 		});
 		btnCalcular.setBounds(156, 143, 82, 23);
 		contentPane.add(btnCalcular);
 		
-	
-			
-		
-		
-		
+		ImageIcon img = new ImageIcon("./resources/coronavirus.png");
+		setIconImage(img.getImage());
 	}
 	
 	

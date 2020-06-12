@@ -100,25 +100,20 @@ public class Operacoes
 		}
 		br.close();
 	}
-	
 
 	//METODO PARA INSERIR UM NOVO ELEMENTO NO ARQUIVO TXT;
-	public void Insert(Leito l) throws NumberFormatException, IOException {
-		ArrayList<Leito> lista = new ArrayList<Leito>();
-        lista.addAll(Operacoes.getListaLeitos("entrada"));        
-        lista.add(l);
-        
-        
-        
-        
-		criarArquivo(lista, "entrada");
-		System.out.println("Feito =D");	
+	public static void Insert(Leito l) {
+		try {
+			ArrayList<Leito> lista = new ArrayList<Leito>();
+			lista.addAll(Operacoes.getListaLeitos("entrada"));        
+			lista.add(l);
+			criarArquivo(lista, "entrada");
+		} catch (NumberFormatException | IOException e) {
+			JOptionPane.showMessageDialog(null, "LEITO INVÁLIDO!", "ERRO!", JOptionPane.ERROR_MESSAGE);
+		}
 	}
-
-	
 	
 	//METODO PARA DELETAR UM ELEMENTO DO ARQUIVO TXT;
-	//a
 	public static void Delete() throws IOException{
 		ArrayList<Leito> lista = new ArrayList<Leito>();
         lista.addAll(Operacoes.getListaLeitos("entrada"));
@@ -126,8 +121,18 @@ public class Operacoes
         lista.remove(0);		
 		// ESCREVE A LISTA EM TXT NOVAMENTE ;
 		criarArquivo(lista, "entrada");
-		System.out.println("Feito =D");
-	}			
+	}
+	
+	public static String search(int i) {
+		ArrayList<Leito> lista = new ArrayList<Leito>();
+		try {
+			lista.addAll(Operacoes.getListaLeitos("entrada"));
+        	return lista.get(i-1).linhaCompleta();
+        } catch (Exception e){
+			return null;
+        }
+        
+	}
 }
 
 

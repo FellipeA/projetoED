@@ -1,7 +1,5 @@
 package Entity;
 
-import java.util.Date;
-
 public class Leito 
 {
 	private String data; /* Data no formato YYYY-MM-DD */

@@ -73,8 +73,8 @@ public class Operacoes
 		bfr2.close();
 	}
 	
-	public void Read() throws IOException {
-		
+	public void Read() throws IOException
+	{	
 		String caminho = "./resources/entrada.txt";
 		BufferedReader br = new BufferedReader(new FileReader(caminho));
 		String linha = "";
@@ -101,11 +101,10 @@ public class Operacoes
 		}
 	}
 	
-	public void Delete() throws IOException{
+	public void Delete() throws IOException
+	{
 		lst.remove(1);
 		System.out.println(lst);
-	}
-		
-		
+	}	
 }
 

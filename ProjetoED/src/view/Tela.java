@@ -59,7 +59,8 @@ public class Tela {
 		});
 		
 		JButton btnLerArquivo = new JButton("Ler Arquivo");
-		btnLerArquivo.addActionListener(new ActionListener() {
+		btnLerArquivo.addActionListener(new ActionListener() 
+		{
 			public void actionPerformed(ActionEvent e) {
 			}
 		});

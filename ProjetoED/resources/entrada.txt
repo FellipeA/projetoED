@@ -1,4 +1,3 @@
-datahora;nome_drs;total_covid_uti;pop;leitos_pc;internacoes_7d;internacoes_7d_l;internacoes_7v7
 18/05/2020;Municipio de São Paulo;2806;11869660;23,6;5059;4741;6,7
 18/05/2020;Grande SP Leste;301;2977781;10,1;593;478;24,1
 18/05/2020;Grande SP Norte;55;603465;9,1;120;110;9,1

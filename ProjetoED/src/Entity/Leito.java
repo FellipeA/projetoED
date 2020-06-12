@@ -97,6 +97,6 @@ public class Leito
 			   this.getLeitospc()+";"+
 			   this.internacoes7d+";"+
 			   this.internacoes7di+";"+
-			   this.internacoes7v7;
+			   this.internacoes7v7+"\n";
 	}
 }

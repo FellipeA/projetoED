@@ -14,11 +14,9 @@ import javax.swing.JOptionPane;
 import javax.swing.SwingConstants;
 
 import Controller.Operacoes;
-import Controller.Ordenacao;
 
 public class Tela 
 {
-	private Operacoes opt = new Operacoes();
 	private JFrame frmCoview;
 
 	public Tela() 
@@ -44,7 +42,7 @@ public class Tela
 			{
 				try 
 				{
-					opt.Create();
+					Operacoes.Create();
 					JOptionPane.showMessageDialog(null, "Arquivo criado com sucesso !");
 				} 
 				catch (IOException e1) 
@@ -59,8 +57,7 @@ public class Tela
 		{
 			public void actionPerformed(ActionEvent e) 
 			{
-				TelaVisualizar tl = new TelaVisualizar();
-				tl.show();
+				new TelaVisualizar();
 			}
 		});
 		btnLerArquivo.setBounds(52, 112, 150, 23);
@@ -76,7 +73,7 @@ public class Tela
 			public void actionPerformed(ActionEvent e) 
 			{
 				try {
-					opt.Delete();
+					Operacoes.Delete();
 					JOptionPane.showMessageDialog(null, "Deletado com sucesso !");
 				} catch (IOException e1) {
 					JOptionPane.showMessageDialog(null, "Não foi possível deletar o arquivo", "Erro !", JOptionPane.ERROR_MESSAGE);

@@ -29,20 +29,18 @@ public class Operacoes
 		BufferedWriter bw = new BufferedWriter(fw);
 		
 		String txt="";
+		br.readLine();
         while(br.ready()) {
             txt += br.readLine() + "\n";
         }
         
         bw.write(txt);
         bw.flush();
-        
-        fr.close();
         br.close();
-        fw.close();
         bw.close();
 	}
 	
-	public void criarArquivo(ArrayList<Leito> lista, String nomeArquivo) throws IOException {
+	public static void criarArquivo(ArrayList<Leito> lista, String nomeArquivo) throws IOException {
 		File f1 = new File("./resources/"+nomeArquivo+".txt");
 		f1.createNewFile();
 		FileWriter fw = new FileWriter(f1);
@@ -52,11 +50,10 @@ public class Operacoes
 			bw.write(l.linhaCompleta());
 		}	
 		
-		fw.close();
 		bw.close();
 	}
 	
-	public ArrayList<Leito> getListaLeitos(String nomeArquivo) throws NumberFormatException, IOException {
+	public static ArrayList<Leito> getListaLeitos(String nomeArquivo) throws NumberFormatException, IOException {
 		File file = new File("./resources/"+nomeArquivo+".txt");
 		FileReader fileReader = new FileReader(file);
 		BufferedReader bufferedReader = new BufferedReader(fileReader);
@@ -65,7 +62,6 @@ public class Operacoes
 		Leito l;
 		String[] texto;
 		
-		bufferedReader.readLine();
 		while(bufferedReader.ready())
 		{
 			texto = bufferedReader.readLine().split(";");
@@ -80,16 +76,16 @@ public class Operacoes
 			l.setInternacoes7v7(Double.parseDouble(texto[7].replace(",", ".")));
 			lista.add(l);
 		}
+		
 		bufferedReader.close();
-		fileReader.close();
 		return lista;
 	}
 	
-	public void Create() throws IOException {
+	public static void Create() throws IOException {
 		criarArquivo(arquivoOriginal.getName(), "entrada");
 	}
 	
-	public void Read() throws IOException {	
+	public static void Read() throws IOException {	
 		String caminho = "./resources/entrada.txt";
 		BufferedReader br = new BufferedReader(new FileReader(caminho));
 		String linha = "";
@@ -118,7 +114,7 @@ public class Operacoes
 			switch (option) {
 				case 1://PRIMEIRA OPÇÃO DEIXANDO O USUARIO ESCOLHER SE QUER EXCLUIR UM ELEMENTO;
 					JOptionPane.showMessageDialog(null, "Delete ?");
-					op.Delete();
+					Operacoes.Delete();
 				break;
 				
 				case 2://SEGUNDA OPÇÃO DEIXANDO O USUARIO ESCOLHER SE QUER INSERIR UM NOVO ELEMENTO;
@@ -142,7 +138,6 @@ public class Operacoes
 	
 	//METODO PARA INSERIR UM NOVO ELEMENTO NO ARQUIVO TXT;
 	public void Insert() {
-		// TODO Auto-generated method stub
 		
 	}
 
@@ -150,7 +145,7 @@ public class Operacoes
 	
 	//METODO PARA DELETAR UM ELEMENTO DO ARQUIVO TXT;
 	//a
-	public void Delete() throws IOException{
+	public static void Delete() throws IOException{
 		ArrayList<Leito> getListaLeitos = new ArrayList<Leito>();
 		
 		// REMOVENDO O PRIMEIRO ELEMENTO DA LISTA //

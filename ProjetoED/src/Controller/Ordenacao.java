@@ -9,15 +9,15 @@ import java.util.List;
 
 import Entity.Leito;
 
-public class Ordenacao
-{
-	public void bubblesort(List<Leito> lst)
-	{
+public class Ordenacao {
+	
+	private Operacoes op = new Operacoes();
+	
+	public void bubblesort(ArrayList<Leito> lst) {
 		
 	}
 	
-	public ArrayList<Leito> shellSort(ArrayList<Leito> lst, int size) throws IOException 
-	{
+	public void shellSort(ArrayList<Leito> lst, int size) throws IOException {
 	    int i , j;
 		Leito value;
 	    int gap = 1;
@@ -40,10 +40,8 @@ public class Ordenacao
 	            lst.set(j + gap, value);
 	        }
 	    }   
-	    File f = new File("./resources/Shellsort.txt");
-	    FileWriter fw = new FileWriter(f);
-	    BufferedWriter bfw = new BufferedWriter(fw);
 	    
-	    return lst;
+	    op.criarArquivo(lst, "shellsort");
+	    
 	}
 }

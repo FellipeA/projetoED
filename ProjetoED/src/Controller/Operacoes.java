@@ -50,12 +50,10 @@ public class Operacoes
 		
 		for(Leito l : lista) {
 			bw.write(l.linhaCompleta());
-		}
+		}	
 		
 		fw.close();
 		bw.close();
-		
-		JOptionPane.showMessageDialog(null, "Arquivo escrito com sucesso!");
 	}
 	
 	public ArrayList<Leito> getListaLeitos(String nomeArquivo) throws NumberFormatException, IOException {
@@ -99,7 +97,8 @@ public class Operacoes
 			if(linha != null)
 			{
 				System.out.println(linha);
-			} else
+			} 
+			else
 				break;
 				linha = br.readLine();
 		}

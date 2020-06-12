@@ -33,7 +33,7 @@ public class Operacoes
 		f1.createNewFile();
 		FileWriter fw = new FileWriter(f1);
 		BufferedWriter bfw = new BufferedWriter(fw);
-		
+	
 		/* Lendo o arquivo original e passando para a Lista */
 		FileReader fr2 = new FileReader(f1);
 		BufferedReader bfr2 = new BufferedReader(fr2);

@@ -149,6 +149,7 @@ public class Operacoes
 	
 	
 	//METODO PARA DELETAR UM ELEMENTO DO ARQUIVO TXT;
+	//a
 	public void Delete() throws IOException{
 		ArrayList<Leito> getListaLeitos = new ArrayList<Leito>();
 		

@@ -46,10 +46,9 @@ public class Tela {
 		{
 			public void actionPerformed(ActionEvent e) 
 			{
-				Operacoes op = new Operacoes();
 				try 
 				{
-					op.Create();
+					opt.Create();
 					JOptionPane.showMessageDialog(null, "Arquivo criado com sucesso !");
 				} 
 				catch (IOException e1) 

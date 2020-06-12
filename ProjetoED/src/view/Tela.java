@@ -64,6 +64,13 @@ public class Tela
 		frmCoview.getContentPane().add(btnLerArquivo);
 		
 		JButton btnAtualizaArquivo = new JButton("Atualizar Arquivo");
+		btnAtualizaArquivo.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				new TelaInserir().setVisible(true);
+				
+				
+			}
+		});
 		btnAtualizaArquivo.setBounds(52, 159, 150, 23);
 		frmCoview.getContentPane().add(btnAtualizaArquivo);
 		

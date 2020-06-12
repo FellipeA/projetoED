@@ -101,43 +101,16 @@ public class Operacoes
 		br.close();
 	}
 	
-	//METODO PARA DAR UPDATE NO ARQUIVO, COM AS OP합ES DE DELETAR E INSERIR;
-	public void Update() throws IOException 
-	{
-		Operacoes op = new Operacoes();
-		
-		int option = 0;
-		
-		
-		//CRIA플O DO SWITCH CASE PARA DAR AS OP합ES
-		while(option != 9) {
-			switch (option) {
-				case 1://PRIMEIRA OP플O DEIXANDO O USUARIO ESCOLHER SE QUER EXCLUIR UM ELEMENTO;
-					JOptionPane.showMessageDialog(null, "Delete ?");
-					Operacoes.Delete();
-				break;
-				
-				case 2://SEGUNDA OP플O DEIXANDO O USUARIO ESCOLHER SE QUER INSERIR UM NOVO ELEMENTO;
-					JOptionPane.showMessageDialog(null, "Insert ?");
-					Operacoes.Insert();
-				break;
-				
-				case 9://CASE PARA SAIR DO NOSSO LOOPING E DO CASE
-					JOptionPane.showMessageDialog(null, "FINALIZADO");
-				break;
 
-				default:
-					JOptionPane.showMessageDialog(null, "ESCOLHA APENAS UMA OP플O: ");
-				break;
-			}
-		}
-	}
-	
 	//METODO PARA INSERIR UM NOVO ELEMENTO NO ARQUIVO TXT;
 	public void Insert(Leito l) throws NumberFormatException, IOException {
 		ArrayList<Leito> lista = new ArrayList<Leito>();
         lista.addAll(Operacoes.getListaLeitos("entrada"));        
         lista.add(l);
+        
+        
+        
+        
 		criarArquivo(lista, "entrada");
 		System.out.println("Feito =D");	
 	}

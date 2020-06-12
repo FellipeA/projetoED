@@ -2,10 +2,15 @@ package view;
 
 import java.awt.BorderLayout;
 import java.awt.EventQueue;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
+
+import Entity.Leito;
+
 import javax.swing.JButton;
 import javax.swing.JTextField;
 import javax.swing.JLabel;
@@ -21,21 +26,7 @@ public class TelaInserir extends JFrame
 	private JTextField txtInternacoes7;
 	private JTextField txtInternacoes7di;
 	private JTextField txtInternacoes7v7;
-	public static void main(String[] args) 
-	{
-		EventQueue.invokeLater(new Runnable() 
-		{
-			public void run() 
-			{
-				try {
-					TelaInserir frame = new TelaInserir();
-					frame.setVisible(true);
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
-		});
-	}
+
 
 	public TelaInserir() {
 		setTitle("Inserir Leito");
@@ -47,6 +38,21 @@ public class TelaInserir extends JFrame
 		contentPane.setLayout(null);
 		
 		JButton btnInserir = new JButton("Inserir");
+		btnInserir.addActionListener(new ActionListener() {
+			
+			public void actionPerformed(ActionEvent e) {
+				Leito leito = new Leito();
+				
+				leito.setData(txtData.getText());
+				leito.setInternacoes7d(Integer.parseInt(txtInternacoes7.getText()));
+				leito.setInternacoes7di(Integer.parseInt(txtInternacoes7di.getText()));
+				leito.setLeitospc(Double.parseDouble(txtLeitosporPessoa.getText()));
+				leito.setNomedistrito(txtDistrito.getText());
+				leito.setPopulacao(Integer.parseInt((txtPopulacao.getText())));
+				leito.setTotalcovidleito(Integer.parseInt(txtLeitos.getText()));
+				
+			}
+		});
 		btnInserir.setBounds(169, 201, 89, 23);
 		contentPane.add(btnInserir);
 		
@@ -124,7 +130,25 @@ public class TelaInserir extends JFrame
 		txtInternacoes7v7.setColumns(10);
 		
 		JButton btnCalcular = new JButton("Calcular");
+		btnCalcular.addActionListener(new ActionListener() {
+			
+			public void actionPerformed(ActionEvent e) {
+				
+			txtInternacoes7v7.setText((((Integer.parseInt(txtInternacoes7.getText())) - (Integer.parseInt(txtInternacoes7di.getText())) / (Integer.parseInt(txtInternacoes7di.getText())))));
+				
+			}
+		});
 		btnCalcular.setBounds(156, 143, 82, 23);
 		contentPane.add(btnCalcular);
+		
+	
+			
+		
+		
+		
 	}
+	
+	
+	
+	
 }

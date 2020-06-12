@@ -1,7 +1,10 @@
 package Controller;
 
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
 
 import Entity.Leito;
@@ -13,25 +16,34 @@ public class Ordenacao
 		
 	}
 	
-	public int[] shellSort(int[] vet, int size) 
+	public ArrayList<Leito> shellSort(ArrayList<Leito> lst, int size) throws IOException 
 	{
-	    int i , j , value;
+	    int i , j;
+		Leito value;
 	    int gap = 1;
-	    while(gap < size) {
-	        gap = 3*gap+1;
+	    while(gap < size) 
+	    {
+	        gap = 3 * gap+1;
 	    }
-	    while ( gap > 1) {
+	    while ( gap > 1) 
+	    {
 	        gap /= 3;
-	        for(i = gap; i < size; i++) {
-	            value = vet[i];
+	        for(i = gap; i < size; i++) 
+	        {
+	            value = lst.get(i);
 	            j = i - gap;
-	            while (j >= 0 && value < vet[j]) {
-	                vet [j + gap] = vet[j];
+	            while (j >= 0 && value.getTotalcovidleito() < lst.get(j).getTotalcovidleito()) 
+	            {
+	            	lst.set(j + gap, lst.get(j + gap));
 	                j -= gap;
 	            }
-	            vet [j + gap] = value;
+	            lst.set(j + gap, value);
 	        }
 	    }   
-	    return vet;
+	    File f = new File("./resources/Shellsort.txt");
+	    FileWriter fw = new FileWriter(f);
+	    BufferedWriter bfw = new BufferedWriter(fw);
+	    
+	    return lst;
 	}
 }

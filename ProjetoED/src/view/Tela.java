@@ -1,26 +1,20 @@
 package view;
 
 import java.awt.EventQueue;
-
-import javax.swing.JFrame;
-import com.jgoodies.forms.layout.FormLayout;
-import com.jgoodies.forms.layout.ColumnSpec;
-import com.jgoodies.forms.layout.RowSpec;
-
-import Controller.Operacoes;
-
-import com.jgoodies.forms.layout.FormSpecs;
+import java.awt.Font;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.io.IOException;
 
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
-import java.awt.event.ActionListener;
-import java.io.IOException;
-import java.awt.event.ActionEvent;
+import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
-
-import java.awt.Font;
 import javax.swing.SwingConstants;
+
+import Controller.Operacoes;
+import Controller.Ordenacao;
 
 public class Tela 
 {
@@ -66,6 +60,8 @@ public class Tela
 		{
 			public void actionPerformed(ActionEvent e) 
 			{
+				Ordenacao od = new Ordenacao();
+				od.shellSort(lst, size)
 			}
 		});
 		btnLerArquivo.setBounds(52, 112, 150, 23);

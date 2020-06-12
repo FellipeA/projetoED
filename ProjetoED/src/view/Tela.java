@@ -75,8 +75,13 @@ public class Tela
 		{
 			public void actionPerformed(ActionEvent e) 
 			{
-				//opt.Delete();
-				JOptionPane.showMessageDialog(null, "Efetuado com Sucesso");
+				try {
+					opt.Delete();
+					JOptionPane.showMessageDialog(null, "Deletado com sucesso !");
+				} catch (IOException e1) {
+					JOptionPane.showMessageDialog(null, "Não foi possível deletar o arquivo", "Erro !", JOptionPane.ERROR_MESSAGE);
+					e1.printStackTrace();
+				}
 			}
 		});
 		btnDeletaDado.setBounds(52, 206, 150, 23);

@@ -105,23 +105,71 @@ public class Operacoes
 		br.close();
 	}
 	
-	public void Update() 
+	//METODO PARA DAR UPDATE NO ARQUIVO, COM AS OP합ES DE DELETAR E INSERIR;
+	public void Update() throws IOException 
 	{
-		int option;
-		String lista;
+		Operacoes op = new Operacoes();
 		
-//		if(list.contains("a")) {
-//			
-//			int a;
-//			
-//			
-//		}
+		int option = 0;
+		
+		
+		//CRIA플O DO SWITCH CASE PARA DAR AS OP합ES
+		while(option != 9) {
+			switch (option) {
+				case 1://PRIMEIRA OP플O DEIXANDO O USUARIO ESCOLHER SE QUER EXCLUIR UM ELEMENTO;
+					JOptionPane.showMessageDialog(null, "Delete ?");
+					op.Delete();
+				break;
+				
+				case 2://SEGUNDA OP플O DEIXANDO O USUARIO ESCOLHER SE QUER INSERIR UM NOVO ELEMENTO;
+					JOptionPane.showMessageDialog(null, "Insert ?");
+					op.Insert();
+				break;
+				
+				case 9://CASE PARA SAIR DO NOSSO LOOPING E DO CASE
+					JOptionPane.showMessageDialog(null, "FINALIZADO");
+				break;
+
+				default:
+					JOptionPane.showMessageDialog(null, "ESCOLHA APENAS UMA OP플O: ");
+				break;
+		}
+		
+		}
+		
+		
 	}
 	
-//	public void Delete() throws IOException
-//	{
-//		lst.remove(1);
-//		System.out.println(lst);
-//	}	
+	//METODO PARA INSERIR UM NOVO ELEMENTO NO ARQUIVO TXT;
+	public void Insert() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	
+	
+	//METODO PARA DELETAR UM ELEMENTO DO ARQUIVO TXT;
+	//a
+	public void Delete() throws IOException{
+		ArrayList<Leito> getListaLeitos = new ArrayList<Leito>();
+		
+		// REMOVENDO O PRIMEIRO ELEMENTO DA LISTA //
+		getListaLeitos.remove(1);
+		
+		// PASSANDO A LISTA PARA STRING PARA CONSEGUIR ESCREVER EM TXT NOVAMENTE //
+		File file = new File (getListaLeitos.toString());
+		
+		// LINHA DE CODIGO PARA CONSEGUIR ESCREVER A LISTA EM UM TXT DENOVO //
+		FileWriter fw = new FileWriter(file.getAbsoluteFile());
+		BufferedWriter bw = new BufferedWriter(fw);
+		
+		// ESCREVE A LISTA EM TXT NOVAMENTE ;
+		bw.write(getListaLeitos.toString());
+		bw.close();
+		System.out.println("Feito =D");
+		}
+		
+				
 }
+
 

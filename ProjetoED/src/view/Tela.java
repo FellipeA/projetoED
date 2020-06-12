@@ -60,8 +60,8 @@ public class Tela
 		{
 			public void actionPerformed(ActionEvent e) 
 			{
-				Ordenacao od = new Ordenacao();
-				od.shellSort(lst, size)
+				TelaVisualizar tl = new TelaVisualizar();
+				tl.show();
 			}
 		});
 		btnLerArquivo.setBounds(52, 112, 150, 23);

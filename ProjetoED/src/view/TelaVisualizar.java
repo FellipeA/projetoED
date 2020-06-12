@@ -3,17 +3,21 @@ package view;
 import java.awt.EventQueue;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.IOException;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
+import Controller.Operacoes;
 import Controller.Ordenacao;
 
 public class TelaVisualizar extends JFrame 
 {
 	private JPanel contentPane;
+	private Operacoes op;
+	A
 	public static void main(String[] args) 
 	{
 		EventQueue.invokeLater(new Runnable() 
@@ -37,7 +41,7 @@ public TelaVisualizar()
 {
 		setTitle("Visualizar Dados");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 255, 257);
+		setBounds(100, 100, 250, 205);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
@@ -48,19 +52,39 @@ public TelaVisualizar()
 		{
 			public void actionPerformed(ActionEvent e) 
 			{
-				Ordenacao od = new Ordenacao();
-				od.shellSort(lst, size)
+				
 			}
 		});
-		btnShellsort.setBounds(53, 96, 135, 23);
+		btnShellsort.setBounds(53, 41, 135, 23);
 		contentPane.add(btnShellsort);
 		
 		JButton btnBubblesort = new JButton("Ordenar (Bubblesort)");
-		btnBubblesort.setBounds(53, 152, 135, 23);
+		btnShellsort.addActionListener(new ActionListener() 
+		{
+			public void actionPerformed(ActionEvent e) 
+			{
+				
+			}
+		});
+		btnBubblesort.setBounds(53, 92, 135, 23);
 		contentPane.add(btnBubblesort);
-		
-		JButton btnDesordenado = new JButton("Desordenado");
-		btnDesordenado.setBounds(53, 39, 135, 23);
-		contentPane.add(btnDesordenado);
+		btnShellsort.addActionListener(new ActionListener() 
+		{
+			public void actionPerformed(ActionEvent e) 
+			{
+				try 
+				{
+					op.getListaLeitos("entrada");
+				} 
+				catch (NumberFormatException e1) 
+				{
+					e1.printStackTrace();
+				} 
+				catch (IOException e1) 
+				{
+					e1.printStackTrace();
+				}
+			}
+		});
 	}
 }

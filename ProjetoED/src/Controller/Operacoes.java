@@ -102,31 +102,10 @@ public class Operacoes
 	}
 	
 	public void Delete() throws IOException{
-			int tamanho;
-			String caminho = "./resources/entrada.txt";
-			int posicao = 0;
-			if(!(posicao >= 0 && posicao < tamanho)) {
-				throw new IllegalArgumentException("Posicão Invalida");
-				
-			}
-			for (int i = posicao; i< this.tamanho -1 ; i++) {
-				this.elemnto[i] = this.elementos[i+1];
-			}
-			this.tamanho--;
+		lst.remove(1);
+		System.out.println(lst);
 	}
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
+		
+		
 }
-
 

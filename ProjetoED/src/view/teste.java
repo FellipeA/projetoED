@@ -10,6 +10,9 @@ public class teste {
 	{
 		Operacoes op = new Operacoes();
 		op.Create();
+		op.Delete();
+		op.Read();
+		
 	}
 
 }

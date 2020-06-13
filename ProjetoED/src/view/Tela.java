@@ -14,6 +14,7 @@ import javax.swing.JOptionPane;
 import javax.swing.SwingConstants;
 
 import Controller.Operacoes;
+import Controller.Hash;
 
 public class Tela {
 	private JFrame frmCoview;
@@ -32,9 +33,21 @@ public class Tela {
 		JButton btnHash = new JButton("Ordenar Cidades por Hashing");
 		btnHash.setBounds(25, 300, 205, 23);
 		frmCoview.getContentPane().add(btnHash);
-			public void actionPerfomed(ActionEvent e) {
+			btnHash.addActionListener(new ActionListener(){
+				Hash h = new Hash();
+
+				@Override
+				public void actionPerformed(ActionEvent e) {
+				try {
+					h.adicionar(h.carregarArquivo("./resources/cidades_sp.txt"));
+				} catch (IOException e1) {
+					JOptionPane.showMessageDialog(null, "NÃO FOI POSSÍVEL ENCONTRAR O ARQUIVO");
+					e1.printStackTrace();
+				}
+					
+				}
 				
-			}
+			});
 		
 		JButton btnCriarNovoArquivo = new JButton("Criar Novo Arquivo");
 		btnCriarNovoArquivo.setBounds(52, 67, 150, 23);

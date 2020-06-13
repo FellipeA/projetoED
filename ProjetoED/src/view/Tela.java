@@ -24,6 +24,7 @@ public class Tela {
 	}
 
 	private void initialize() {
+		//System.out.println("");
 		frmCoview = new JFrame();
 		frmCoview.setTitle("Co-View-19");
 		frmCoview.setBounds(100, 100, 280, 400);

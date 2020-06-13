@@ -85,10 +85,17 @@ public class Operacoes
 		criarArquivo(arquivoOriginal.getName(), "entrada");
 	}
 	
+	
+	//Metodo para ler o arquivo entrada.txt
 	public static void Read() throws IOException {	
+		
+		//variavel para criar o caminho do arquivo;
 		String caminho = "./resources/entrada.txt";
+		
+		//criando a nossa logica para conseguir ler o arquivo(enviando nosso caminho);
 		BufferedReader br = new BufferedReader(new FileReader(caminho));
 		String linha = "";
+		//laço de repetição para ficar lendo as linhas;
 		while (true) {
 			if(linha != null)
 			{
@@ -98,16 +105,25 @@ public class Operacoes
 				break;
 				linha = br.readLine();
 		}
+		//fechando o bufferedReader;
 		br.close();
 	}
 
 	//METODO PARA INSERIR UM NOVO ELEMENTO NO ARQUIVO TXT;
 	public static void Insert(Leito l) {
+		//CRIACAO DE UM METODO TRY CATCH ;
 		try {
+			//INSTANCIANCO A LISTA PARA CONSEGUIR TRATAR ELA;
 			ArrayList<Leito> lista = new ArrayList<Leito>();
-			lista.addAll(Operacoes.getListaLeitos("entrada"));        
+			
+			//ADICIONANDO NA LISTA OS ELEMENTOS DO LEITO
+			lista.addAll(Operacoes.getListaLeitos("entrada"));
+			//ADICIONANDO NA PRIMEIRA LINHA, COMO REGRA DE NEGOCIO DE FIFO
 			lista.add(l);
+			
+			//PUXANDO O METODO CRIAR ARQUIVO (PARA MANDAR A NOVA LISTA ATUALIZADA)
 			criarArquivo(lista, "entrada");
+			//CATCH PARA TRATAR A EXCESSÃO
 		} catch (NumberFormatException | IOException e) {
 			JOptionPane.showMessageDialog(null, "LEITO INVÁLIDO!", "ERRO!", JOptionPane.ERROR_MESSAGE);
 		}
@@ -123,8 +139,14 @@ public class Operacoes
 		criarArquivo(lista, "entrada");
 	}
 	
+	
+	//METODO PARA CONSEGUIR ENCONTRAR UMA LINHA NO ARQUIVO
 	public static String search(int i) {
+		
+		//INSTANCIANDO A NOSSA LISTA DE LEITO;
 		ArrayList<Leito> lista = new ArrayList<Leito>();
+
+		//CRIACAO DE UM TRY CATCH PARA TRATAR;
 		try {
 			lista.addAll(Operacoes.getListaLeitos("entrada"));
         	return lista.get(i-1).linhaCompleta();

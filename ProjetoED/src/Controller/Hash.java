@@ -64,6 +64,6 @@ public class Hash {
 		// Adicionar Hash encadeado
 		LinkedHashMap<Integer, String> lh = new LinkedHashMap<Integer, String>();
 		lh.putAll(map);
-		JOptionPane.showInternalMessageDialog(null, (lh.values().toString().split(Pattern.quote(","))));
+		JOptionPane.showMessageDialog(null, lh.values().toString().split(Pattern.quote(",")));
 	}
 }

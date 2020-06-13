@@ -35,15 +35,14 @@ public class Tela {
 		btnHash.setBounds(25, 300, 205, 23);
 		frmCoview.getContentPane().add(btnHash);
 			btnHash.addActionListener(new ActionListener(){
-				Hash h = new Hash();
+				Hash hash = new Hash();
 
 				@Override
 				public void actionPerformed(ActionEvent e) {
 				try {
-					h.adicionar(h.carregarArquivo("./resources/cidades_sp.txt"));
+					hash.adicionar(hash.carregarArquivo("./resources/cidades_sp.txt"));
 				} catch (IOException e1) {
 					JOptionPane.showMessageDialog(null, "NÃO FOI POSSÍVEL ENCONTRAR O ARQUIVO");
-					e1.printStackTrace();
 				}
 					
 				}
@@ -91,7 +90,6 @@ public class Tela {
 					JOptionPane.showMessageDialog(null, "Deletado com sucesso !");
 				} catch (IOException e1) {
 					JOptionPane.showMessageDialog(null, "Não foi possível deletar o arquivo", "Erro !", JOptionPane.ERROR_MESSAGE);
-					e1.printStackTrace();
 				}
 			}
 		});

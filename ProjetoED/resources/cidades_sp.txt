@@ -1,41 +1,41 @@
-S√£o Paulo       
-Guarulhos 
+S„o Paulo
+Guarulhos
 Campinas
-S√£o Bernardo do Campo                                                 
-S√£o Jos√© dos Campos                                                   
-Santo Andr√©
-Ribeir√£o Preto                                                
-Osasco                                                
+S„o Bernardo do Campo
+S„o JosÈ dos Campos
+Santo AndrÈ
+Ribeir„o Preto
+Osasco
 Sorocaba
-Mau√°                                                  
-S√£o Jos√© do Rio Preto                                                 
-Mogi das Cruzes                                               
-Santos                                                
-Diadema                                               
-Jundia√≠                                               
-Piracicaba                                                    
-Carapicu√≠ba                                                   
-Bauru                                                 
-Itaquaquecetuba                                               
-S√£o Vicente                                                   
-Franca                                                
-Praia Grande                                                  
-Guaruj√°                                               
-Taubat√©                                               
-Limeira                                               
-Suzano                                                
-Tabo√£o da Serra                                               
-Sumar√©                                                
-Barueri                                               
-Embu das Artes                                                
-S√£o Carlos                                                    
-Indaiatuba                                                    
-Cotia                                                 
-Americana                                                     
-Mar√≠lia                                               
-Itapevi                                               
-Araraquara                                                    
-Jacare√≠                                               
-Hortol√¢ndia                                                   
-Presidente Prudente	                                             
+Mau·
+S„o JosÈ do Rio Preto
+Mogi das Cruzes
+Santos
+Diadema
+JundiaÌ
+Piracicaba
+CarapicuÌba
+Bauru
+Itaquaquecetuba
+S„o Vicente
+Franca
+Praia Grande
+Guaruj·
+TaubatÈ
+Limeira
+Suzano
+Tabo„o da Serra
+SumarÈ
+Barueri
+Embu das Artes
+S„o Carlos
+Indaiatuba
+Cotia
+Americana
+MarÌlia
+Itapevi
+Araraquara
+JacareÌ
+Hortol‚ndia
+Presidente Prudente
 Rio Claro

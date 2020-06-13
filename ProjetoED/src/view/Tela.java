@@ -25,9 +25,16 @@ public class Tela {
 	private void initialize() {
 		frmCoview = new JFrame();
 		frmCoview.setTitle("Co-View-19");
-		frmCoview.setBounds(100, 100, 280, 350);
+		frmCoview.setBounds(100, 100, 280, 400);
 		frmCoview.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frmCoview.getContentPane().setLayout(null);
+		
+		JButton btnHash = new JButton("Ordenar Cidades por Hashing");
+		btnHash.setBounds(25, 300, 205, 23);
+		frmCoview.getContentPane().add(btnHash);
+			public void actionPerfomed(ActionEvent e) {
+				
+			}
 		
 		JButton btnCriarNovoArquivo = new JButton("Criar Novo Arquivo");
 		btnCriarNovoArquivo.setBounds(52, 67, 150, 23);

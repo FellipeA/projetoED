@@ -17,6 +17,8 @@ public class Operacoes
 
 	private static File arquivoOriginal = new File("./resources/Leitos-e-Internacoes2.csv");
 	
+	
+	//METODO PARA CRIAÇÃO DO TXT;
 	public static void criarArquivo(String arquivoOrigem, String nomeArquivo) throws IOException {
 //		LER ARQUIVO
 		File arquivoLido = new File("./resources/"+arquivoOrigem);
@@ -40,12 +42,13 @@ public class Operacoes
         bw.close();
 	}
 	
+	//METODO DE CRIAÇÃO PARA A LISTA A SER UTILIZADA
 	public static void criarArquivo(ArrayList<Leito> lista, String nomeArquivo) throws IOException {
 		File f1 = new File("./resources/"+nomeArquivo+".txt");
 		f1.createNewFile();
 		FileWriter fw = new FileWriter(f1);
 		BufferedWriter bw = new BufferedWriter(fw);
-		
+		//CRIACAO DE UM FOR IT PARA ANDAR NA LISTA;
 		for(Leito l : lista) {
 			bw.write(l.linhaCompleta());
 		}	
@@ -53,15 +56,22 @@ public class Operacoes
 		bw.close();
 	}
 	
+	
+	//METODO QUE CRIAMOS PARA CONSEGUIR TRABALHAR COM OS ELEMENTOS DA LISTA
 	public static ArrayList<Leito> getListaLeitos(String nomeArquivo) throws NumberFormatException, IOException {
+		
+		//PREPARANDO O ARQUIVO PARA SER ESCRITO
 		File file = new File("./resources/"+nomeArquivo+".txt");
 		FileReader fileReader = new FileReader(file);
 		BufferedReader bufferedReader = new BufferedReader(fileReader);
 		
+		//CRIANDO A INSTANCIA DE LEITO PARA UTILIZAR OS ELEMENTOS 
 		ArrayList<Leito> lista = new ArrayList<Leito>();
 		Leito l;
 		String[] texto;
 		
+		
+		//WHILE PARA CONSEGUIR ESCREVER OS ELEMENTOS DO ARQUIVO NA LISTA
 		while(bufferedReader.ready())
 		{
 			texto = bufferedReader.readLine().split(";");
@@ -81,6 +91,8 @@ public class Operacoes
 		return lista;
 	}
 	
+	
+	//METODO PARA CRIAR O ARQUIVO ENTRADA.TXT
 	public static void Create() throws IOException {
 		criarArquivo(arquivoOriginal.getName(), "entrada");
 	}

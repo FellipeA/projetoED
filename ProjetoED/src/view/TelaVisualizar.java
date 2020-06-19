@@ -25,7 +25,7 @@ public class TelaVisualizar extends JFrame {
 		setVisible(true);
 		setTitle("Visualizar Dados");
 		setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE);
-		setBounds(100, 100, 250, 205);
+		setBounds(100, 200, 250, 250);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
@@ -61,6 +61,20 @@ public class TelaVisualizar extends JFrame {
 		});
 		btnBubblesort.setBounds(53, 92, 135, 23);
 		contentPane.add(btnBubblesort);
+		
+		JButton btnSelectionsort = new JButton("Ordenar Selectionsort");
+		btnSelectionsort.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				try {
+					long tempo = Ordenacao.selectionSort(Operacoes.getListaLeitos("entrada"));
+					JOptionPane.showMessageDialog(null, "Arquivo SELECTIONSORT criado com sucesso!\n Tempo para a ordenação: "+tempo+"ms");
+				} catch (NumberFormatException | IOException e1) {
+					e1.printStackTrace();
+				}
+			}
+		});
+		btnSelectionsort.setBounds(53, 142, 135, 23);
+		contentPane.add(btnSelectionsort);
 		
 
 		ImageIcon img = new ImageIcon("./resources/coronavirus.png");

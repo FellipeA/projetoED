@@ -83,4 +83,40 @@ public class Ordenacao {
 		// retorno do tempo
 	    return tempo;
 	}
+	
+	
+	
+	
+	
+	
+	public static long selectionSort(ArrayList<Leito> lst) {
+		Long tempo = System.currentTimeMillis();
+	    for (int i = 0; i < lst.size(); i++) {
+	        Leito min = lst.get(i);
+	        int minId = i;
+	        for (int j = i+1; j < lst.size(); j++) {
+	            if (lst.get(j).getTotalcovidleito() < min.getTotalcovidleito()) {
+	                min = lst.get(j);
+	                minId = j;
+	            }
+	        }
+	        // swapping
+	        Leito temp = lst.get(i);
+	        lst.set(i, min);
+	        lst.set(minId, temp);
+	    }
+	    
+	    try {
+			Operacoes.criarArquivo(lst, "selectionsort");
+		} catch (IOException e) {
+			JOptionPane.showMessageDialog(null, "ERRO AO CRIAR O ARQUIVO SELECTIONSORT", "ERRO!", JOptionPane.ERROR_MESSAGE);
+		}
+
+		// Coletando a diferença dos tempos do sistema,
+		// o que gera, em milisegundos, o tempo de execução para essa ordenação
+		tempo = System.currentTimeMillis()- tempo;
+		
+		// retorno do tempo
+	    return tempo;
+	}
 }
